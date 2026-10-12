@@ -29,12 +29,6 @@
 
 - 🔧 **[Jetson · CUDA 실습](https://github.com/yeju321qaz/embedded-systems-jetson)** `2024.11 – 12` — NVIDIA Jetson에서 `/dev/mem` mmap으로 GPIO 레지스터를 직접 제어하고, CUDA 커널로 처리한 영상을 LCD에 출력한 실습 (임베디드시스템 교과목 · 개인 · 제공 코드 기반 구현)
 
-<br/>예금보험공사 RAG 상담 챗봇<br/>`2026.07 – 09` | 5인 팀 팀장<br/>RAG · 백엔드 · 평가 | Recall@5 **0.956** (held-out 89문항)<br/>엄격 정답률 **83.5%** (답변형 79문항, 사람 검수)<br/>질문당 LLM 비용 **2.24원** (웹 질문 138건, 조기 종료 포함 평균) |
-| **[Autique](https://github.com/hamyeon/be-ai/blob/main/docs/ai-system.md)**<br/>중고 스니커즈 가격 검증 · 경매 플랫폼<br/>`2026.03 – ` | 3인 팀<br/>AI 담당 | Vision 분석 **14.9초 → 4.7초**, 비용 **-64%** (사진 3~6장 14건)<br/>상태 등급 완전 오답 **0건**<br/>규칙 기반 적합도 판정 **97%** (실제 매물 59건) |
-| **Model Scout** 🔒<br/>Hugging Face 모델 추천 도구<br/>`2026.09 – ` · 저장소 비공개 | 4인 팀 팀장<br/>평가 체계 · 검색 실험 | 후보 **1,170개** 사람 전수 판정<br/>BM25 기준선의 검색기 결함 **2건** 발견 |
-| **[Visual Token Compression](https://github.com/yeju321qaz/artificial-intelligence-course-project/blob/main/notebooks/vqa-final-project.ipynb)**<br/>효율적 VQA를 위한 visual token 선별<br/>`2026 Spring` | 개인<br/>인공지능 수업 | visual token **576 → 64** (88.9% 감소)<br/>VQA accuracy **80.0%** (라벨 30문항, 객관식) |
-| **[Jetson · CUDA 실습](https://github.com/yeju321qaz/embedded-systems-jetson)**<br/>임베디드시스템 교과목<br/>`2024.11 – 12` | 개인<br/>제공 코드 기반 구현 | GPIO 레지스터 직접 제어<br/>CUDA 커널 영상 처리 → LCD 출력 |
-
 <br/>
 
 ## Highlights
