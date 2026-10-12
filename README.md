@@ -15,9 +15,21 @@
 
 ## Selected Work
 
-| 프로젝트 | 담당 | 대표 결과 (평가 조건) |
-| --- | --- | --- |
-| **[예솜24](https://github.com/likelion-8/kdic-rag-chatbot)**<br/>예금보험공사 RAG 상담 챗봇<br/>`2026.07 – 09` | 5인 팀 팀장<br/>RAG · 백엔드 · 평가 | Recall@5 **0.956** (held-out 89문항)<br/>엄격 정답률 **83.5%** (답변형 79문항, 사람 검수)<br/>질문당 LLM 비용 **2.24원** (웹 질문 138건, 조기 종료 포함 평균) |
+- 🏦 **[예솜24](https://github.com/likelion-8/kdic-rag-chatbot)** `2026.07 – 09` — 예금보험공사 공식 안내만 근거로 답하고, 근거 부재 시 답변을 거절하는 RAG 상담 챗봇. 비용 순 3단 게이트와 출처 링크 코드 부착 구조로 오답 · 환각 차단 (5인 팀 팀장 · **담당: RAG 파이프라인, 평가 체계, 관리자 콘솔 백엔드**)
+  - Recall@5 **0.956** (held-out 89문항) · 엄격 정답률 **83.5%** (답변형 79문항, 사람 검수) · 질문당 LLM 비용 **2.24원** (웹 질문 138건 평균)
+
+- 👟 **[Autique](https://github.com/hamyeon/be-ai/blob/main/docs/ai-system.md)** `2026.03 – ` — 상품 사진으로 등록 초안을 만들고, 실거래 시세 기반 추천가를 계산 근거와 함께 제시하는 중고 스니커즈 가격 검증 · 경매 플랫폼 (3인 팀 산학 캡스톤 · **담당: Vision 분석, 가격 산정, 구매자 Agent 구성 요소, 평가 하네스**)
+  - Vision 분석 **14.9초 → 4.7초**, 비용 **-64%** (사진 3~6장 14건) · 상태 등급 완전 오답 **0건** · 규칙 기반 적합도 판정 **97%** (실제 매물 59건)
+
+- 🔎 **Model Scout** 🔒 `2026.09 – ` — 요구사항을 입력하면 조건에 맞는 Hugging Face 모델을 근거와 함께 추천하는 도구. 라이선스 · 하드웨어 · 언어 조건 위반을 치명 오류로 구분하는 평가 체계 설계 (4인 팀 팀장 · **담당: 골든셋 · 판정 체계 구축, 검색 기준선 실험** · 저장소 비공개)
+  - 후보 **1,170개** 사람 전수 판정 · BM25 기준선의 검색기 결함 **2건** 발견
+
+- 🖼️ **[Visual Token Compression](https://github.com/yeju321qaz/artificial-intelligence-course-project)** `2026 Spring` — LLaVA-Phi-3-Mini의 visual token을 추가 학습 없이 선별해 VQA 추론 입력을 줄이는 실험. feature norm · CLS 유사도 점수와 공간 분포를 결합한 Hybrid 선별 방식 구현 (인공지능 수업 개인 프로젝트)
+  - visual token **576 → 64** (88.9% 감소) · VQA accuracy **80.0%** (라벨 30문항, 객관식)
+
+- 🔧 **[Jetson · CUDA 실습](https://github.com/yeju321qaz/embedded-systems-jetson)** `2024.11 – 12` — NVIDIA Jetson에서 `/dev/mem` mmap으로 GPIO 레지스터를 직접 제어하고, CUDA 커널로 처리한 영상을 LCD에 출력한 실습 (임베디드시스템 교과목 · 개인 · 제공 코드 기반 구현)
+
+<br/>예금보험공사 RAG 상담 챗봇<br/>`2026.07 – 09` | 5인 팀 팀장<br/>RAG · 백엔드 · 평가 | Recall@5 **0.956** (held-out 89문항)<br/>엄격 정답률 **83.5%** (답변형 79문항, 사람 검수)<br/>질문당 LLM 비용 **2.24원** (웹 질문 138건, 조기 종료 포함 평균) |
 | **[Autique](https://github.com/hamyeon/be-ai/blob/main/docs/ai-system.md)**<br/>중고 스니커즈 가격 검증 · 경매 플랫폼<br/>`2026.03 – ` | 3인 팀<br/>AI 담당 | Vision 분석 **14.9초 → 4.7초**, 비용 **-64%** (사진 3~6장 14건)<br/>상태 등급 완전 오답 **0건**<br/>규칙 기반 적합도 판정 **97%** (실제 매물 59건) |
 | **Model Scout** 🔒<br/>Hugging Face 모델 추천 도구<br/>`2026.09 – ` · 저장소 비공개 | 4인 팀 팀장<br/>평가 체계 · 검색 실험 | 후보 **1,170개** 사람 전수 판정<br/>BM25 기준선의 검색기 결함 **2건** 발견 |
 | **[Visual Token Compression](https://github.com/yeju321qaz/artificial-intelligence-course-project/blob/main/notebooks/vqa-final-project.ipynb)**<br/>효율적 VQA를 위한 visual token 선별<br/>`2026 Spring` | 개인<br/>인공지능 수업 | visual token **576 → 64** (88.9% 감소)<br/>VQA accuracy **80.0%** (라벨 30문항, 객관식) |
