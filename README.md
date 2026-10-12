@@ -19,8 +19,8 @@
 | --- | --- | --- |
 | **[예솜24](https://github.com/likelion-8/kdic-rag-chatbot)**<br/>예금보험공사 RAG 상담 챗봇<br/>`2026.07 – 09` | 5인 팀 팀장<br/>RAG · 백엔드 · 평가 | Recall@5 **0.956** (held-out 89문항)<br/>엄격 정답률 **83.5%** (답변형 79문항, 사람 검수)<br/>질문당 LLM 비용 **2.24원** (웹 질문 138건, 조기 종료 포함 평균) |
 | **[Autique](https://github.com/hamyeon/be-ai/blob/main/docs/ai-system.md)**<br/>중고 스니커즈 가격 검증 · 경매 플랫폼<br/>`2026.03 – ` | 3인 팀<br/>AI 담당 | Vision 분석 **14.9초 → 4.7초**, 비용 **-64%** (사진 3~6장 14건)<br/>상태 등급 완전 오답 **0건**<br/>규칙 기반 적합도 판정 **97%** (실제 매물 59건) |
-| **Model Scout**<br/>Hugging Face 모델 추천 도구<br/>`2026.09 – ` | 4인 팀 팀장<br/>평가 체계 · 검색 실험 | 후보 **1,170개** 사람 전수 판정<br/>BM25 기준선의 검색기 결함 **2건** 발견 |
-| **Visual Token Compression**<br/>효율적 VQA를 위한 visual token 선별<br/>`2026 Spring` | 개인 | visual token **576 → 64** (88.9% 감소)<br/>VQA accuracy **80.0%** 유지 |
+| **Model Scout** 🔒<br/>Hugging Face 모델 추천 도구<br/>`2026.09 – ` · 저장소 비공개 | 4인 팀 팀장<br/>평가 체계 · 검색 실험 | 후보 **1,170개** 사람 전수 판정<br/>BM25 기준선의 검색기 결함 **2건** 발견 |
+| **[Visual Token Compression](https://github.com/yeju321qaz/artificial-intelligence-course-project/blob/main/notebooks/vqa-final-project.ipynb)**<br/>효율적 VQA를 위한 visual token 선별<br/>`2026 Spring` | 개인<br/>인공지능 수업 | visual token **576 → 64** (88.9% 감소)<br/>VQA accuracy **80.0%** (라벨 30문항, 객관식) |
 | **Jetson · CUDA 실습**<br/>임베디드시스템 교과목<br/>`2024.11 – 12` | 개인<br/>제공 코드 기반 구현 | GPIO 레지스터 직접 제어<br/>CUDA 커널 영상 처리 → LCD 출력 |
 
 <br/>
@@ -44,7 +44,7 @@
 - 질문 단위 비용 감사: Langfuse trace와 실행 로그 결합, 생성 단계 이전 게이트 종료 53% · [비용 감사](https://github.com/likelion-8/kdic-rag-chatbot/blob/main/experiments/cost_audit/README.md)
 
 **Vision / VLM · 엣지 디바이스**
-- LLaVA-Phi-3-Mini 대상, 추가 학습 없는 visual token 선별 전략 7종 동일 조건 비교
+- LLaVA-Phi-3-Mini 대상, 추가 학습 없는 visual token 선별 전략 7종 동일 조건 비교 · 최종 Hybrid Top-k + Spatial(32:32) 채택 · [구현 노트북](https://github.com/yeju321qaz/artificial-intelligence-course-project/blob/main/notebooks/vqa-final-project.ipynb)
 - Jetson `/dev/mem` mmap 기반 pinmux · GPIO 레지스터 직접 설정, 입력값의 모스부호 LED 출력
 - PPM 이미지의 CUDA 커널 grayscale 변환 및 RGB565 변환 후 LCD 출력, 버튼 입력 기반 화면 전환
 
@@ -90,6 +90,15 @@
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=flat-square&logo=android&logoColor=white)
 ![Retrofit](https://img.shields.io/badge/Retrofit_%2F_OkHttp-48B983?style=flat-square&logo=square&logoColor=white)
 ![Coroutines](https://img.shields.io/badge/Coroutines-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
+
+<br/>
+
+## Other Repositories
+
+| 저장소 | 내용 |
+| --- | --- |
+| [artificial-intelligence-course-project](https://github.com/yeju321qaz/artificial-intelligence-course-project) | 인공지능 수업 과제 · NumPy 신경망 forward / backward 직접 구현, CNN 이미지 분류, Vanilla RNN, VQA visual token 압축 |
+| [Team-MuMuk / FE](https://github.com/Team-MuMuk/FE) | 레시피 추천 Android 앱 「오늘 뭐 해먹지?」 · 3인 프론트 · 회원가입 · 소셜 로그인 · 찜 · 최근 본 레시피 API 연동 |
 
 <br/>
 
