@@ -5,9 +5,9 @@
 [![Email](https://img.shields.io/badge/yeju321qaz@gmail.com-333333?style=flat-square&logo=gmail&logoColor=white)](mailto:yeju321qaz@gmail.com)
 ![Ewha](https://img.shields.io/badge/Ewha_Womans_Univ.-Computer_Science-00462A?style=flat-square)
 
-- 모델 구현 이전 단계에서 정답 · 오답 · 판단 보류 기준 정의
-- 모델 오류 가능 지점의 코드 · 서버 검증 기반 차단
-- 정확도와 함께 비용 · 지연 · 거절 적절성의 측정 및 운영 지표화
+구현 전에 무엇을 정답 · 오답 · 판단 보류로 볼지부터 정합니다.
+모델 출력에서 틀릴 수 있는 부분은 프롬프트를 고치기보다 코드와 서버에서 검증합니다.
+정확도뿐 아니라 비용, 응답 시간, 답변을 거절해야 할 때 제대로 거절하는지도 함께 평가합니다.
 
 **Interests** · RAG · Vision / VLM · 평가 자동화 · 엣지 디바이스 추론
 
@@ -15,44 +15,60 @@
 
 ## Selected Work
 
-- 🏦 **[예솜24](https://github.com/likelion-8/kdic-rag-chatbot)** `2026.07 – 09` — 예금보험공사 공식 안내만 근거로 답하고, 근거 부재 시 답변을 거절하는 RAG 상담 챗봇. 비용 순 3단 게이트와 출처 링크 코드 부착 구조로 오답 · 환각 차단 (5인 팀 팀장 · **담당: RAG 파이프라인, 평가 체계, 관리자 콘솔 백엔드**)
-  - Recall@5 **0.956** (held-out 89문항) · 엄격 정답률 **83.5%** (답변형 79문항, 사람 검수) · 질문당 LLM 비용 **2.24원** (웹 질문 138건 평균)
+- 🏦 **[예솜24](https://github.com/likelion-8/kdic-rag-chatbot)** `2026.07 – 09`<br/>
+  예금보험공사의 공식 안내만 근거로 답하고, 근거가 없으면 답변을 거절하는 RAG 상담 챗봇입니다. 비용이 낮은 단계부터 배치한 3단 게이트로 범위 밖 질문을 먼저 걸러내고, 출처 링크는 모델이 아닌 코드에서 붙여 존재하지 않는 URL이 생성되는 문제를 막았습니다.<br/>
+  5인 팀 팀장 · **담당: RAG 파이프라인, 평가 체계, 관리자 콘솔 백엔드**
+  - Recall@5 **0.956** (held-out 89문항)
+  - 엄격 정답률 **83.5%** (답변형 79문항, 사람 검수)
+  - 질문당 LLM 비용 **2.24원** (웹 질문 138건 평균)
 
-- 👟 **[Autique](https://github.com/hamyeon/be-ai/blob/main/docs/ai-system.md)** `2026.03 – ` — 상품 사진으로 등록 초안을 만들고, 실거래 시세 기반 추천가를 계산 근거와 함께 제시하는 중고 스니커즈 가격 검증 · 경매 플랫폼 (3인 팀 산학 캡스톤 · **담당: Vision 분석, 가격 산정, 구매자 Agent 구성 요소, 평가 하네스**)
-  - Vision 분석 **14.9초 → 4.7초**, 비용 **-64%** (사진 3~6장 14건) · 상태 등급 완전 오답 **0건** · 규칙 기반 적합도 판정 **97%** (실제 매물 59건)
+- 👟 **[Autique](https://github.com/hamyeon/be-ai/blob/main/docs/ai-system.md)** `2026.03 – `<br/>
+  상품 사진으로 등록 초안을 만들고, 실거래 시세를 바탕으로 추천가와 그 계산 근거를 함께 보여 주는 중고 스니커즈 가격 검증 · 경매 플랫폼입니다.<br/>
+  3인 팀 산학 캡스톤 · **담당: Vision 분석, 가격 산정, 구매자 Agent 구성 요소, 평가 하네스**
+  - Vision 분석 시간 **14.9초 → 4.7초**, 분석 1건 비용 약 70원 → 25원 (사진 3~6장 14건, 케이스별 가장 느린 단계 평균)
+  - 상태 등급 완전 오답 **0건** (모델 4종 비교, 18건)
+  - 매물 적합도 판정 정확도 **92% → 97%** (실제 매물 59건, 규칙 기반 판정)
 
-- 🔎 **Model Scout** 🔒 `2026.09 – ` — 요구사항을 입력하면 조건에 맞는 Hugging Face 모델을 근거와 함께 추천하는 도구. 라이선스 · 하드웨어 · 언어 조건 위반을 치명 오류로 구분하는 평가 체계 설계 (4인 팀 팀장 · **담당: 골든셋 · 판정 체계 구축, 검색 기준선 실험** · 저장소 비공개)
-  - 후보 **1,170개** 사람 전수 판정 · BM25 기준선의 검색기 결함 **2건** 발견
+- 🔎 **Model Scout** 🔒 `2026.09 – `<br/>
+  요구사항을 입력하면 조건에 맞는 Hugging Face 모델을 근거와 함께 추천하는 도구입니다. 라이선스 · 하드웨어 · 언어 조건을 어긴 추천은 치명 오류로 분류해 평가합니다.<br/>
+  4인 팀 팀장 · **담당: 골든셋과 판정 체계 구축, 검색 기준선 실험** · 저장소 비공개
+  - 후보 **1,170개**를 사람이 전수 검토
+  - BM25 기준선에서 검색기 결함 **2건** 발견
 
-- 🖼️ **[Visual Token Compression](https://github.com/yeju321qaz/artificial-intelligence-course-project)** `2026 Spring` — LLaVA-Phi-3-Mini의 visual token을 추가 학습 없이 선별해 VQA 추론 입력을 줄이는 실험. feature norm · CLS 유사도 점수와 공간 분포를 결합한 Hybrid 선별 방식 구현 (인공지능 수업 개인 프로젝트)
-  - visual token **576 → 64** (88.9% 감소) · VQA accuracy **80.0%** (라벨 30문항, 객관식)
+- 🖼️ **[Visual Token Compression](https://github.com/yeju321qaz/artificial-intelligence-course-project)** `2026 Spring`<br/>
+  LLaVA-Phi-3-Mini가 이미지 한 장을 576개 token으로 처리하는 부분에서, 추가 학습 없이 중요한 token만 남겨도 답이 유지되는지 실험했습니다. feature norm과 CLS 유사도로 점수를 매기고, 이미지 전체 영역이 고르게 남도록 공간 분포를 함께 고려했습니다.<br/>
+  인공지능 수업 개인 프로젝트
+  - visual token **576 → 64** (88.9% 감소)
+  - VQA accuracy **80.0%** (라벨 30문항, 객관식)
 
-- 🔧 **[Jetson · CUDA 실습](https://github.com/yeju321qaz/embedded-systems-jetson)** `2024.11 – 12` — NVIDIA Jetson에서 `/dev/mem` mmap으로 GPIO 레지스터를 직접 제어하고, CUDA 커널로 처리한 영상을 LCD에 출력한 실습 (임베디드시스템 교과목 · 개인 · 제공 코드 기반 구현)
+- 🔧 **[Jetson · CUDA 실습](https://github.com/yeju321qaz/embedded-systems-jetson)** `2024.11 – 12`<br/>
+  NVIDIA Jetson에서 `/dev/mem`을 mmap해 GPIO 레지스터를 직접 제어하고, CUDA 커널로 처리한 영상을 LCD에 출력했습니다.<br/>
+  임베디드시스템 교과목 · 개인 · 수업 제공 코드를 바탕으로 과제 기능 구현
 
 <br/>
 
 ## Highlights
 
-**평가를 먼저 의심한 사례**
-- 의도 분류 정확도 100% 측정 → 학습 페이지 기반 문항 생성에 따른 평가 누수 규명 → leave-page-out 재평가로 **81.5%** 확정 · [비교 기록](https://github.com/likelion-8/kdic-rag-chatbot/blob/main/docs/intent_classifier_comparison.md)
-- 같은 초안의 평가 결과가 실행마다 상이 → 서비스 코드에만 존재하던 복구 로직 발견, 평가 · 서비스 실행 경로 일원화
-- Model Scout 기준선 hit@5 1/24 → 중복 제거 단계의 정답 소실(11건) 및 비상업 라이선스 모델 추천 결함 발견
+**평가 오류를 발견하고 수정한 경험**
+- 의도 분류 정확도가 100%로 나와 오히려 의심했습니다. 평가 문항이 학습에 쓰인 페이지에서 만들어진 누수였고, 같은 페이지 문항을 모두 빼는 leave-page-out 평가로 실제 성능 **81.5%**를 다시 확인했습니다. · [분류기 비교 결과](https://github.com/likelion-8/kdic-rag-chatbot/blob/main/docs/intent_classifier_comparison.md)
+- 같은 초안의 평가 결과가 실행할 때마다 달라지는 문제를 발견했습니다. 서비스 코드에만 있던 복구 로직이 원인이어서, 평가와 서비스의 실행 경로를 일치시켜 해결했습니다.
+- Model Scout의 BM25 기준선 점수(hit@5 1/24)가 지나치게 낮아 검색기부터 확인했습니다. 중복 제거 단계에서 정답 모델이 빠지는 문제(11건)와 비상업 라이선스 모델을 추천하는 문제를 찾았습니다.
 
-**프롬프트 대신 구조로 막은 사례**
-- 출처 URL 환각 → LLM의 URL 생성 배제, 색인 데이터 기반 코드 부착 구조로 변경 · 출처 정확률 **0.317 → 0.785**
-- 판매자 입력 AI 추정가의 입찰 상한 반영 경로 → 서버 시세 provider 구현으로 조작 경로 차단
-- 자연어 구매 조건 파싱 결과 → 카탈로그 · 허용 범위 기반 서버 검증기로 재확인
+**응답 구조와 서버 검증을 개선한 경험**
+- 프롬프트를 세 번 보강해도 모델이 존재하지 않는 출처 URL을 만들었습니다. URL은 모델에 맡기지 않고 색인 데이터에서 코드로 붙이도록 바꿔, 출처 정확률을 **0.317 → 0.785**로 높였습니다.
+- 판매자 앱이 보낸 AI 추정가가 입찰 상한 계산에 그대로 쓰이는 문제를 찾았습니다. 시세를 서버에서 직접 계산하도록 바꿔 판매자가 값을 조작할 수 없게 했습니다.
+- 자연어 구매 조건을 구조화한 결과도 서버에서 한 번 더 확인합니다. 카탈로그에 없는 모델이나 허용 범위를 벗어난 금액은 비우고, 그 이유를 사용자에게 안내합니다.
 
-**품질 · 비용 · 지연을 함께 본 결정**
-- 리랭커 미채택: MRR 0.857 → 0.946, 주 지표 Recall@5 동일, 응답 시간 증가 · [실험 기록](https://github.com/likelion-8/kdic-rag-chatbot/blob/main/docs/reranker_gpu_eval_2026-08-24.md)
-- 생성 모델: 엄격 정답률 동일(83.5%) 조건에서 단가 약 1/5 모델 채택 · [A/B 기록](https://github.com/likelion-8/kdic-rag-chatbot/blob/main/docs/generation_model_ab_hcx007_vs_dash002_2026-08-26.md)
-- Vision 단계별 모델 분리: 라벨 판독 Sonnet 5 유지, 실루엣 · 상태 판정 Haiku 5.5 전환 · [Vision 설계](https://github.com/hamyeon/be-ai/blob/main/docs/ai-vision-agent.md)
-- 질문 단위 비용 감사: Langfuse trace와 실행 로그 결합, 생성 단계 이전 게이트 종료 53% · [비용 감사](https://github.com/likelion-8/kdic-rag-chatbot/blob/main/experiments/cost_audit/README.md)
+**품질 · 비용 · 응답 시간을 고려한 선택**
+- 리랭커는 MRR을 0.857 → 0.946으로 올렸지만 서비스 기준인 Recall@5는 그대로였고 응답은 느려져 기본값으로 쓰지 않았습니다. · [리랭커 실험](https://github.com/likelion-8/kdic-rag-chatbot/blob/main/docs/reranker_gpu_eval_2026-08-24.md)
+- 생성 모델 후보 두 개의 엄격 정답률이 83.5%로 같아, 단가가 약 1/5인 모델을 선택했습니다. · [생성 모델 비교](https://github.com/likelion-8/kdic-rag-chatbot/blob/main/docs/generation_model_ab_hcx007_vs_dash002_2026-08-26.md)
+- Vision 분석은 가장 느린 단계가 전체 시간을 결정해서, 작은 글씨를 읽는 라벨 판독만 Sonnet 5로 두고 실루엣 · 상태 판정은 Haiku 5.5로 옮겼습니다. · [Vision 설계 문서](https://github.com/hamyeon/be-ai/blob/main/docs/ai-vision-agent.md)
+- Langfuse 기록과 실행 로그를 합쳐 질문 단위로 비용을 확인했습니다. 전체 질문의 53%가 답변 생성 전 게이트에서 끝나고 있었습니다. · [비용 감사 스크립트](https://github.com/likelion-8/kdic-rag-chatbot/blob/main/experiments/cost_audit/README.md)
 
 **Vision / VLM · 엣지 디바이스**
-- LLaVA-Phi-3-Mini 대상, 추가 학습 없는 visual token 선별 전략 7종 동일 조건 비교 · 최종 Hybrid Top-k + Spatial(32:32) 채택 · [구현 노트북](https://github.com/yeju321qaz/artificial-intelligence-course-project/blob/main/notebooks/vqa-final-project.ipynb)
-- Jetson `/dev/mem` mmap 기반 pinmux · GPIO 레지스터 직접 설정, 입력값의 모스부호 LED 출력 · [코드](https://github.com/yeju321qaz/embedded-systems-jetson/tree/main/gpio)
-- PPM 이미지의 CUDA 커널 grayscale 변환 및 RGB565 변환 후 LCD 출력, 버튼 입력 기반 화면 전환
+- visual token 선별은 상위 점수 token만 고르면 특정 영역에 몰려서, 32개는 전체 점수 순으로, 나머지 32개는 영역마다 하나씩 고르는 방식으로 정했습니다. · [구현 노트북](https://github.com/yeju321qaz/artificial-intelligence-course-project/blob/main/notebooks/vqa-final-project.ipynb)
+- Jetson에서 pinmux와 GPIO 레지스터 주소를 직접 매핑해, 입력한 숫자를 모스부호 LED 점멸로 출력했습니다. · [GPIO 코드](https://github.com/yeju321qaz/embedded-systems-jetson/tree/main/gpio)
+- CUDA 커널(16×16 block)로 이미지를 흑백 변환하고 RGB565로 바꿔 LCD에 띄운 뒤, 버튼 입력으로 원본과 결과 화면을 전환했습니다. · [CUDA 코드](https://github.com/yeju321qaz/embedded-systems-jetson/tree/main/cuda)
 
 <br/>
 
