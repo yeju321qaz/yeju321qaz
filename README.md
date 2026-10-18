@@ -35,6 +35,10 @@
   - 후보 **1,170개**를 사람이 전수 검토
   - BM25 기준선에서 검색기 결함 **2건** 발견
 
+- 🧅 **Tor Website Fingerprinting** `2026.09 – ` · 진행 중<br/>
+  Tor로 암호화된 트래픽에서 패킷 방향 · 크기 · 시간 간격 같은 패턴만으로 사용자가 방문한 웹사이트를 분류할 수 있는지 실험하는 프로젝트입니다. 내용을 볼 수 없는 트래픽에서 어떤 특징이 사이트를 구분하는지를 다룹니다.<br/>
+  기계학습 수업 팀 프로젝트 · **담당: 데이터 파이프라인, 트래픽 피처 추출 · 정리**
+
 - 🖼️ **[Visual Token Compression](https://github.com/yeju321qaz/artificial-intelligence-course-project)** `2026 Spring`<br/>
   LLaVA-Phi-3-Mini가 이미지 한 장을 576개 token으로 처리하는 부분에서, 추가 학습 없이 중요한 token만 남겨도 답이 유지되는지 실험했습니다. feature norm과 CLS 유사도로 점수를 매기고, 이미지 전체 영역이 고르게 남도록 공간 분포를 함께 고려했습니다.<br/>
   인공지능 수업 개인 프로젝트
