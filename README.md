@@ -1,87 +1,37 @@
-# 이예주 · Lee Yejoo
+<div align="center">
 
-**AI Engineer**
+# Hi, I'm Yejoo Lee 👋
 
-[![Email](https://img.shields.io/badge/yeju321qaz@gmail.com-333333?style=flat-square&logo=gmail&logoColor=white)](mailto:yeju321qaz@gmail.com)
-![Ewha](https://img.shields.io/badge/Ewha_Womans_Univ.-Computer_Science-00462A?style=flat-square)
+### AI Engineer
 
-RAG 챗봇, 이미지 분석, 구매 Agent처럼 LLM과 Vision 모델을 실제 서비스로 만드는 일을 해 왔습니다.<br/>
-모델이 잘 동작하는지 직접 측정해서 확인하고, 틀릴 수 있는 부분은 서비스 구조로 보완하는 것을 중요하게 생각합니다.
-
-**Interests** · RAG · Vision / VLM · 평가 자동화 · 엣지 디바이스 추론
+Ewha Womans University, Computer Science & Engineering · Class of 2027
 
 <br/>
 
-## Selected Work
+[![Email](https://img.shields.io/badge/Email-yeju321qaz@gmail.com-333333?style=flat-square&logo=gmail&logoColor=white)](mailto:yeju321qaz@gmail.com)
 
-- 🏦 **[예솜24](https://github.com/likelion-8/kdic-rag-chatbot)** `2026.07 – 09`<br/>
-  예금보험공사의 공식 안내만 근거로 답하고, 근거가 없으면 답변을 거절하는 RAG 상담 챗봇입니다. 비용이 낮은 단계부터 배치한 3단 게이트로 범위 밖 질문을 먼저 걸러내고, 출처 링크는 모델이 아닌 코드에서 붙여 존재하지 않는 URL이 생성되는 문제를 막았습니다.<br/>
-  5인 팀 팀장 · **담당: RAG 파이프라인, 평가 체계, 관리자 콘솔 백엔드**
-  - Recall@5 **0.956** (held-out 89문항)
-  - 엄격 정답률 **83.5%** (답변형 79문항, 사람 검수)
-  - 질문당 LLM 비용 **2.24원** (웹 질문 138건 평균)
+</div>
 
-- 👟 **[Autique](https://github.com/hamyeon/be-ai)** `2026.03 – `<br/>
-  상품 사진으로 등록 초안을 만들고, 실거래 시세를 바탕으로 추천가와 계산 근거를 함께 보여 주는 중고 스니커즈 경매 플랫폼입니다. 구매자가 "뉴발 990, A급 이상, 15만원 이하"처럼 목표를 적어 두면, 조건에 맞는 경매를 주기적으로 찾아 서버가 정한 상한 안에서 대신 입찰하는 **구매 Agent**도 함께 만들었습니다.<br/>
-  3인 팀 산학 캡스톤 · **담당: Vision 분석, 가격 산정, 구매 Agent의 AI 구성 요소(목표 파서 · 매물 적합도 판정 · 서버 시세 계산), 평가 하네스** · 입찰 워크플로는 백엔드 팀원 담당
-  - Vision 분석 시간 **14.9초 → 4.7초**, 분석 1건 비용 약 70원 → 25원 (사진 3~6장 14건, 케이스별 가장 느린 단계 평균)
-  - 상태 등급 완전 오답 **0건** (모델 4종 비교, 18건)
-  - 매물 적합도 판정 정확도 **92% → 97%**, 조건에 맞지 않는 매물을 통과시킨 경우 **0건** (실제 매물 59건, 규칙 기반 판정)
-  - 배포 직후 첫 Vision 호출 지연 **8.0초 → 1.0초** (기동 시 연결 워밍업, 로컬 측정 각 3회)
+---
 
-- 🔎 **Model Scout** 🔒 `2026.09 – `<br/>
-  요구사항을 입력하면 조건에 맞는 Hugging Face 모델을 근거와 함께 추천하는 도구입니다. 라이선스 · 하드웨어 · 언어 조건을 어긴 추천은 치명 오류로 분류해 평가합니다.<br/>
-  4인 팀 팀장 · **담당: 골든셋과 판정 체계 구축, 검색 기준선 실험** · 저장소 비공개
-  - 후보 **1,170개**를 사람이 전수 검토
-  - BM25 기준선에서 검색기 결함 **2건** 발견
+## About Me
 
-- 🧅 **[Tor Website Fingerprinting](https://github.com/kiak-team/ML)** `2026.10 – ` · 진행 중<br/>
-  Tor로 암호화된 트래픽에서 셀의 방향과 시간 정보만으로 사용자가 방문한 웹사이트를 분류하는 프로젝트입니다. 감시 대상 95개 사이트 기록 19,000개와 비대상 사이트 기록 10,000개를 다룹니다.<br/>
-  기계학습 수업 팀 프로젝트 · **담당: 데이터 전처리, 피처 추출, 피처 검증 실험**
-  - 페이지 로딩 초반의 방향 패턴을 피처로 추가해 RF 정확도 **87.9% → 95.5%** (train 내부 5-fold CV, 기본 하이퍼파라미터, test 평가 전)
-  - 비대상 사이트 탐지 점수(ROC-AUC 1.0000)가 부풀려진 원인이 수집 환경 차이였음을 찾아, 해당 구간을 제거하고 피처를 다시 계산
-
-- 🖼️ **[Visual Token Compression](https://github.com/yeju321qaz/artificial-intelligence-course-project)** `2026 Spring`<br/>
-  LLaVA-Phi-3-Mini가 이미지 한 장을 576개 token으로 처리하는 부분에서, 추가 학습 없이 중요한 token만 남겨도 답이 유지되는지 실험했습니다. feature norm과 CLS 유사도로 점수를 매기고, 이미지 전체 영역이 고르게 남도록 공간 분포를 함께 고려했습니다.<br/>
-  인공지능 수업 개인 프로젝트
-  - visual token **576 → 64** (88.9% 감소)
-  - VQA accuracy **80.0%** (라벨 30문항, 객관식)
-
-- 🔧 **[Jetson · CUDA 실습](https://github.com/yeju321qaz/embedded-systems-jetson)** `2024.11 – 12`<br/>
-  NVIDIA Jetson에서 `/dev/mem`을 mmap해 GPIO 레지스터를 직접 제어하고, CUDA 커널로 처리한 영상을 LCD에 출력했습니다.<br/>
-  임베디드시스템 교과목 · 개인 · 수업 제공 코드를 바탕으로 과제 기능 구현
+I build LLM and vision features into real services, and I check with measurements whether they actually work.
 
 <br/>
 
-## Highlights
+| | |
+| --- | --- |
+| 🔭 Currently working on | **Autique** — used-sneaker auction platform with AI pricing and a purchase agent |
+| 🧪 Also working on | **Tor Website Fingerprinting** — ML course team project |
+| 💼 Recent project | **Yesom24** — RAG chatbot for the Korea Deposit Insurance Corporation (team lead) |
+| 🎓 Education | Ewha Womans University, CS · RWTH Aachen University, exchange student (2025.09 – 2026.02) |
 
-**평가 오류를 발견하고 수정한 경험**
-- 의도 분류 정확도가 100%로 나와 오히려 의심했습니다. 평가 문항이 학습에 쓰인 페이지에서 만들어진 누수였고, 같은 페이지 문항을 모두 빼는 leave-page-out 평가로 실제 성능 **81.5%**를 다시 확인했습니다. · [분류기 비교 결과](https://github.com/likelion-8/kdic-rag-chatbot/blob/main/docs/intent_classifier_comparison.md)
-- 같은 초안의 평가 결과가 실행할 때마다 달라지는 문제를 발견했습니다. 서비스 코드에만 있던 복구 로직이 원인이어서, 평가와 서비스의 실행 경로를 일치시켜 해결했습니다.
-- Model Scout의 BM25 기준선 점수(hit@5 1/24)가 지나치게 낮아 검색기부터 확인했습니다. 중복 제거 단계에서 정답 모델이 빠지는 문제(11건)와 비상업 라이선스 모델을 추천하는 문제를 찾았습니다.
-- Tor 프로젝트에서 감시 대상과 비대상 사이트를 가르는 점수가 1.0000으로 나왔습니다. 확인해 보니 8번째 셀의 방향 하나만으로 두 데이터가 99.99% 갈렸고, 이는 사이트 정보가 아닌 수집 환경의 흔적이었습니다. 앞 14셀을 버리고 피처를 다시 계산했습니다. · [open-world 실험 기록](https://github.com/kiak-team/ML/blob/main/docs/OPENWORLD.md)
+---
 
-**응답 구조와 서버 검증을 개선한 경험**
-- 프롬프트를 세 번 보강해도 모델이 존재하지 않는 출처 URL을 만들었습니다. URL은 모델에 맡기지 않고 색인 데이터에서 코드로 붙이도록 바꿔, 출처 정확률을 **0.317 → 0.785**로 높였습니다.
-- 판매자 앱이 보낸 AI 추정가가 입찰 상한 계산에 그대로 쓰이는 문제를 찾았습니다. 시세를 서버에서 직접 계산하도록 바꿔 판매자가 값을 조작할 수 없게 했습니다.
-- 자연어 구매 조건을 구조화한 결과도 서버에서 한 번 더 확인합니다. 카탈로그에 없는 모델이나 허용 범위를 벗어난 금액은 비우고, 그 이유를 사용자에게 안내합니다.
+## Tech Stack
 
-**품질 · 비용 · 응답 시간을 고려한 선택**
-- 리랭커는 MRR을 0.857 → 0.946으로 올렸지만 서비스 기준인 Recall@5는 그대로였고 응답은 느려져 기본값으로 쓰지 않았습니다. · [리랭커 실험](https://github.com/likelion-8/kdic-rag-chatbot/blob/main/docs/reranker_gpu_eval_2026-08-24.md)
-- 생성 모델 후보 두 개의 엄격 정답률이 83.5%로 같아, 단가가 약 1/5인 모델을 선택했습니다. · [생성 모델 비교](https://github.com/likelion-8/kdic-rag-chatbot/blob/main/docs/generation_model_ab_hcx007_vs_dash002_2026-08-26.md)
-- Vision 분석은 가장 느린 단계가 전체 시간을 결정해서, 작은 글씨를 읽는 라벨 판독만 Sonnet 5로 두고 실루엣 · 상태 판정은 Haiku 5.5로 옮겼습니다. · [Vision 설계 문서](https://github.com/hamyeon/be-ai/blob/main/docs/ai-vision-agent.md)
-- Langfuse 기록과 실행 로그를 합쳐 질문 단위로 비용을 확인했습니다. 전체 질문의 53%가 답변 생성 전 게이트에서 끝나고 있었습니다. · [비용 감사 스크립트](https://github.com/likelion-8/kdic-rag-chatbot/blob/main/experiments/cost_audit/README.md)
-
-**Vision / VLM · 엣지 디바이스**
-- visual token 선별은 상위 점수 token만 고르면 특정 영역에 몰려서, 32개는 전체 점수 순으로, 나머지 32개는 영역마다 하나씩 고르는 방식으로 정했습니다. · [구현 노트북](https://github.com/yeju321qaz/artificial-intelligence-course-project/blob/main/notebooks/vqa-final-project.ipynb)
-- Jetson에서 pinmux와 GPIO 레지스터 주소를 직접 매핑해, 입력한 숫자를 모스부호 LED 점멸로 출력했습니다. · [GPIO 코드](https://github.com/yeju321qaz/embedded-systems-jetson/tree/main/gpio)
-- CUDA 커널(16×16 block)로 이미지를 흑백 변환하고 RGB565로 바꿔 LCD에 띄운 뒤, 버튼 입력으로 원본과 결과 화면을 전환했습니다. · [CUDA 코드](https://github.com/yeju321qaz/embedded-systems-jetson/tree/main/cuda)
-
-<br/>
-
-## Stack
-
-**AI · ML**
+### AI · ML
 
 ![OpenAI](https://img.shields.io/badge/OpenAI_API-412991?style=flat-square&logo=openai&logoColor=white)
 ![Claude](https://img.shields.io/badge/Claude_API-D97757?style=flat-square&logo=anthropic&logoColor=white)
@@ -93,7 +43,7 @@ RAG 챗봇, 이미지 분석, 구매 Agent처럼 LLM과 Vision 모델을 실제 
 ![BGE-M3](https://img.shields.io/badge/BGE--M3-555555?style=flat-square)
 ![Langfuse](https://img.shields.io/badge/Langfuse-0A0A0A?style=flat-square)
 
-**Backend · Data**
+### Backend · Data
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-007396?style=flat-square&logo=openjdk&logoColor=white)
@@ -106,33 +56,142 @@ RAG 챗봇, 이미지 분석, 구매 Agent처럼 LLM과 Vision 모델을 실제 
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
 
-**Systems · Embedded**
+### Systems · Embedded
 
 ![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black)
 ![CUDA](https://img.shields.io/badge/CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white)
 ![NVIDIA Jetson](https://img.shields.io/badge/NVIDIA_Jetson-76B900?style=flat-square&logo=nvidia&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
 
-**Android**
+### Android
 
 ![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=flat-square&logo=android&logoColor=white)
 ![Retrofit](https://img.shields.io/badge/Retrofit_%2F_OkHttp-48B983?style=flat-square&logo=square&logoColor=white)
 ![Coroutines](https://img.shields.io/badge/Coroutines-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
 
-<br/>
+---
+
+## Featured Projects
+
+### 🏦 [Yesom24](https://github.com/likelion-8/kdic-rag-chatbot)
+
+> RAG chatbot for the Korea Deposit Insurance Corporation  
+> `2026.07 – 2026.09` · 5-person team · LIKELION AI·NLP Bootcamp industry project
+
+**Role**  
+Team Lead · RAG pipeline, evaluation, admin console backend
+
+**Tech**  
+Python · FastAPI · PostgreSQL/pgvector · bge-m3-ko · HyperCLOVA X · OpenAI Structured Outputs · Langfuse · Docker · pytest
+
+**Highlights**
+
+- Answers only from official guidance and declines when no source supports the answer.
+- Reached **Recall@5 0.956** on 89 held-out questions and **83.5% strict accuracy** on 79 answerable questions (human-reviewed).
+- Placed a 3-stage gate before generation, cheapest check first: **53%** of 138 audited questions ended before the LLM, and the average cost was **₩2.24 per question**.
+- Found that a 100% intent accuracy came from test questions generated from training pages; a leave-page-out evaluation showed the real accuracy was **81.5%**. ([details](https://github.com/likelion-8/kdic-rag-chatbot/blob/main/docs/intent_classifier_comparison.md))
+- Stopped the model from inventing source URLs by attaching links in code from the index, raising source accuracy from **0.317 to 0.785**.
+- Kept the reranker off by default: MRR rose 0.857 → 0.946, but Recall@5 did not change and latency increased. ([details](https://github.com/likelion-8/kdic-rag-chatbot/blob/main/docs/reranker_gpu_eval_2026-08-24.md))
+- Built the admin console backend where prompt and retrieval changes are evaluated before publishing and can be rolled back.
+
+---
+
+### 👟 [Autique](https://github.com/hamyeon/be-ai)
+
+> Used-sneaker auction platform with AI product analysis, pricing, and a purchase agent  
+> `2026.03 – Present` · 3-person team · Industry–academic capstone
+
+**Role**  
+AI Engineer · Vision analysis, pricing, purchase agent AI components, evaluation harnesses (bidding workflow by a backend teammate)
+
+**Tech**  
+Java · Spring Boot · Claude API (Sonnet 5, Haiku 5.5) · OpenAI API · Structured Outputs · Redis Streams · MySQL · AWS · Python
+
+**Highlights**
+
+- Split photo analysis into 3 parallel stages and gave each stage its own model: Vision time **14.9s → 4.7s**, cost per analysis about **₩70 → ₩25** (14 listings, 3–6 photos each).
+- Tracked severe condition-grade errors as the top metric; **0** across 4 compared models on 18 cases.
+- Built the purchase agent's goal parser and listing matcher: a buyer writes "New Balance 990, grade A or better, under ₩150,000", and the agent bids on matching auctions within a server-set cap.
+- Raised listing match accuracy **92% → 97%** with **0** non-matching listings accepted (59 real listings, rule-based matcher).
+- Found that a seller-sent price estimate set the buyer's bidding cap, and moved the price calculation to the server.
+- Calculated price coefficients for condition, color, and accessories from 46,146 real resale listings.
+- Cut the first Vision call after deployment from **8.0s to 1.0s** with a startup warm-up.
+
+---
+
+### 🧅 [Tor Website Fingerprinting](https://github.com/kiak-team/ML)
+
+> Identifying visited websites from encrypted Tor traffic  
+> `2026.10 – Present` · Machine Learning course team project
+
+**Role**  
+Data Preprocessing · feature extraction and validation
+
+**Tech**  
+Python · scikit-learn · pandas · NumPy
+
+**Highlights**
+
+- Wrote the team's shared data loader and checked it against the reference notebook on all **29,000** traces (0 mismatches).
+- Added early page-load direction features, raising Random Forest accuracy **87.9% → 95.5%** (5-fold CV on train, default hyperparameters).
+- Found that one cell direction separated monitored and unmonitored data **99.99%** of the time — a collection artifact, not a website signal — and removed it before open-world experiments. ([details](https://github.com/kiak-team/ML/blob/main/docs/OPENWORLD.md))
+- Found that the last visit in the dataset was slower and shorter than the rest, which makes the current test split harder than average.
+
+---
+
+### 🔎 Model Scout 🔒
+
+> Recommends Hugging Face models that fit a user's requirements  
+> `2026.09 – Present` · 4-person team · Private repository
+
+**Role**  
+Team Lead · evaluation design, retrieval experiments
+
+**Tech**  
+Python · BM25 · BGE-M3 · Hugging Face Hub API · Supabase PostgreSQL/pgvector
+
+**Highlights**
+
+- Defined judging labels that treat license, hardware, and language violations as critical errors.
+- Built a golden set from 57 real model-selection cases and judged **1,170** candidates without showing their source.
+- Investigated a near-zero BM25 baseline (hit@5 1/24) and found **2** retriever defects: correct models dropped during deduplication, and non-commercial models recommended for commercial use.
+
+---
+
+### 🖼️ [Visual Token Compression](https://github.com/yeju321qaz/artificial-intelligence-course-project)
+
+> Training-free visual token selection for LLaVA-Phi-3-Mini  
+> `2026 Spring` · Individual · AI course project
+
+**Tech**  
+Python · PyTorch · LLaVA-Phi-3-Mini
+
+**Highlights**
+
+- Reduced visual tokens from **576 to 64** (88.9% fewer) while keeping **80.0%** VQA accuracy (30 labeled multiple-choice questions).
+- Scored tokens by feature norm and CLS similarity, and picked half by score and half by region so the selection covers the whole image.
+
+---
+
+### 🔧 [Jetson · CUDA Labs](https://github.com/yeju321qaz/embedded-systems-jetson)
+
+> GPIO register control and CUDA image processing on NVIDIA Jetson  
+> `2024.11 – 2024.12` · Individual · Embedded Systems course (built on course-provided code)
+
+**Tech**  
+C · CUDA · NVIDIA Jetson · Linux
+
+**Highlights**
+
+- Controlled GPIO registers directly by mmap-ing `/dev/mem` and blinked an input number as Morse code on an LED.
+- Converted images to grayscale with a CUDA kernel (16×16 blocks) and displayed them on an LCD, switching views with a button.
+
+---
 
 ## Other Repositories
 
-| 저장소 | 내용 |
+| Repository | Description |
 | --- | --- |
-| [artificial-intelligence-course-project](https://github.com/yeju321qaz/artificial-intelligence-course-project) | 인공지능 수업 과제 · NumPy 신경망(test 88.5%), CNN · Inception(CIFAR-10 test 80%), Vanilla RNN, VQA visual token 압축 |
-| [embedded-systems-jetson](https://github.com/yeju321qaz/embedded-systems-jetson) | 임베디드시스템 실습 · Jetson GPIO 레지스터 직접 제어(C), CUDA grayscale 커널 → LCD 출력 |
-| [Team-MuMuk / FE](https://github.com/Team-MuMuk/FE) | 레시피 추천 Android 앱 「오늘 뭐 해먹지?」 · 3인 프론트 · 회원가입 · 소셜 로그인 · 찜 · 최근 본 레시피 API 연동 |
-
-<br/>
-
-## Education
-
-- 이화여자대학교 컴퓨터공학과 학사 (2023.03 – 2027.02 졸업 예정)
-- RWTH Aachen University 컴퓨터공학 교환학생 (2025.09 – 2026.02)
+| [artificial-intelligence-course-project](https://github.com/yeju321qaz/artificial-intelligence-course-project) | AI course assignments · NumPy neural network, CNN with Inception, vanilla RNN, VQA token compression |
+| [Team-MuMuk / FE](https://github.com/Team-MuMuk/FE) | Recipe recommendation Android app · frontend · sign-up, social login, bookmarks, API integration |
