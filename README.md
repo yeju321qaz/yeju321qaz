@@ -2,7 +2,7 @@
 
 ### AI Engineer · RAG · Multimodal · LLM Evaluation
 
-> **Currently building AI pricing and a purchase agent for a used-sneaker auction platform.**
+> **New-grad AI engineer building RAG, multimodal, and agent features for real services.**
 
 RAG · Multimodal · Agent를 실제 서비스에 붙이고, 그 결과를 제대로 평가하는 일에 관심이 있습니다.
 
