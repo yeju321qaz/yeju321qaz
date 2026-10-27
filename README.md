@@ -1,10 +1,10 @@
-# Hi, I'm Yejoo 🔍
+# Hi, I'm Yejoo 🌱
 
-### AI Engineer · RAG · Vision · LLM Evaluation
+### AI Engineer · RAG · Multimodal · LLM Evaluation
 
-> **I build LLM and vision services, and I check whether they actually work.**
+> **Currently building AI pricing and a purchase agent for a used-sneaker auction platform.**
 
-모델 점수를 그대로 믿기보다 평가 방식부터 확인하고, 품질 · 비용 · 속도를 함께 따져 서비스에 적용하는 과정에 관심이 있습니다.
+RAG · 멀티모달 · Agent를 실제 서비스에 붙이고, 그 결과를 제대로 평가하는 일에 관심이 있습니다.
 
 [![Email](https://img.shields.io/badge/yeju321qaz@gmail.com-333333?style=flat-square&logo=gmail&logoColor=white)](mailto:yeju321qaz@gmail.com)
 
