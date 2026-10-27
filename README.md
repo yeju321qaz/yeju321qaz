@@ -4,7 +4,7 @@
 
 > **Currently building AI pricing and a purchase agent for a used-sneaker auction platform.**
 
-RAG · 멀티모달 · Agent를 실제 서비스에 붙이고, 그 결과를 제대로 평가하는 일에 관심이 있습니다.
+RAG · Multimodal · Agent를 실제 서비스에 붙이고, 그 결과를 제대로 평가하는 일에 관심이 있습니다.
 
 [![Email](https://img.shields.io/badge/yeju321qaz@gmail.com-333333?style=flat-square&logo=gmail&logoColor=white)](mailto:yeju321qaz@gmail.com)
 
