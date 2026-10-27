@@ -1,13 +1,12 @@
 # 이예주 · Lee Yejoo
 
-**AI Engineer** — 평가로 검증된 LLM · Vision 서비스
+**AI Engineer**
 
 [![Email](https://img.shields.io/badge/yeju321qaz@gmail.com-333333?style=flat-square&logo=gmail&logoColor=white)](mailto:yeju321qaz@gmail.com)
 ![Ewha](https://img.shields.io/badge/Ewha_Womans_Univ.-Computer_Science-00462A?style=flat-square)
 
-구현 전에 무엇을 정답 · 오답 · 판단 보류로 볼지부터 정합니다.
-모델 출력에서 틀릴 수 있는 부분은 프롬프트를 고치기보다 코드와 서버에서 검증합니다.
-정확도뿐 아니라 비용, 응답 시간, 답변을 거절해야 할 때 제대로 거절하는지도 함께 평가합니다.
+RAG 챗봇, 이미지 분석, 구매 Agent처럼 LLM과 Vision 모델을 실제 서비스로 만드는 일을 해 왔습니다.<br/>
+모델이 잘 동작하는지 직접 측정해서 확인하고, 틀릴 수 있는 부분은 서비스 구조로 보완하는 것을 중요하게 생각합니다.
 
 **Interests** · RAG · Vision / VLM · 평가 자동화 · 엣지 디바이스 추론
 
