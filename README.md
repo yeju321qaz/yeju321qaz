@@ -1,51 +1,47 @@
-# Lee Yejoo · 이예주
+# Hi, I'm Yejoo 🔍
 
-**AI Engineer** · Ewha Womans University, Computer Science & Engineering
+### AI Engineer · RAG · Vision · LLM Evaluation
+
+> **I build LLM and vision services, and I check whether they actually work.**
+
+모델 점수를 그대로 믿기보다 평가 방식부터 확인하고, 품질 · 비용 · 속도를 함께 따져 서비스에 적용하는 과정에 관심이 있습니다.
 
 [![Email](https://img.shields.io/badge/yeju321qaz@gmail.com-333333?style=flat-square&logo=gmail&logoColor=white)](mailto:yeju321qaz@gmail.com)
-
-**Interests** · RAG · Vision / VLM · Evaluation automation · On-device inference
 
 ---
 
 ## Selected Work
 
 - 🏦 **[Yesom24](https://github.com/likelion-8/kdic-rag-chatbot)** `2026.07 – 09`<br/>
-  A RAG chatbot for the Korea Deposit Insurance Corporation that answers only from official guidance and declines when there is no supporting source. Out-of-scope questions are filtered by a three-stage gate before generation, and source links are attached by code, not by the model.<br/>
-  Team lead of 5 · **My part: RAG pipeline, evaluation framework, admin console backend**
-  - Recall@5 **0.956** (89 held-out questions)
-  - Strict accuracy **83.5%** (79 answerable questions, human-reviewed)
-  - LLM cost **₩2.24 per question** (average over 138 web queries)
+  RAG chatbot for the Korea Deposit Insurance Corporation that answers only from official sources.<br/>
+  Team lead of 5 · **RAG pipeline, evaluation, admin backend**
+  - Recall@5 **0.956** (89 held-out questions) · strict accuracy **83.5%** (79 questions, human-reviewed)
+  - LLM cost **₩2.24 per question** (138 web queries)
 
 - 👟 **[Autique](https://github.com/hamyeon/be-ai)** `2026.03 – `<br/>
-  A used-sneaker auction platform that drafts a listing from product photos and suggests a price with its calculation basis, using real resale prices. It also includes a **purchase agent**: a buyer writes a goal like "New Balance 990, grade A or better, under ₩150,000", and the system periodically finds matching auctions and bids on their behalf within a server-set cap.<br/>
-  Industry–academic capstone, team of 3 · **My part: Vision analysis, pricing, the agent's AI components (goal parser, listing matcher, server-side price estimate), evaluation harnesses** · Bidding workflow built by a backend teammate
-  - Vision analysis time **14.9s → 4.7s**, cost per analysis about ₩70 → ₩25 (14 listings with 3–6 photos, mean of the slowest stage per case)
-  - **0** severe condition-grade errors (4 models compared on 18 cases)
-  - Listing match accuracy **92% → 97%**, with **0** non-matching listings accepted (59 real listings, rule-based matcher)
-  - First Vision call after deployment **8.0s → 1.0s** (connection warm-up at startup, 3 local runs each)
+  Used-sneaker auction platform with photo-based listing, AI pricing, and a purchase agent that bids for the buyer.<br/>
+  Team of 3 · **Vision analysis, pricing, purchase agent AI components**
+  - Vision analysis **14.9s → 4.7s**, cost **-64%** (14 listings)
+  - Listing match accuracy **92% → 97%**, 0 wrong matches accepted (59 real listings)
+
+- 🧅 **[Tor Website Fingerprinting](https://github.com/kiak-team/ML)** `2026.10 – ` · in progress<br/>
+  Identifying visited websites from encrypted Tor traffic using only packet direction and timing.<br/>
+  ML course team project · **Data preprocessing, feature extraction**
+  - Random Forest accuracy **87.9% → 95.5%** with early page-load features (5-fold CV)
 
 - 🔎 **Model Scout** 🔒 `2026.09 – `<br/>
-  A tool that recommends Hugging Face models that fit a user's requirements, with reasons. Recommendations that break license, hardware, or language constraints are scored as critical errors.<br/>
-  Team lead of 4 · **My part: golden set and judging process, retrieval baseline experiments** · Private repository
-  - **1,170** candidates reviewed by hand
-  - **2** retriever defects found from the BM25 baseline
-
-- 🧅 **[Tor Website Fingerprinting](https://github.com/kiak-team/ML)** `2026.10 – ` · In progress<br/>
-  Classifying which website a user visited from encrypted Tor traffic, using only cell direction and timing. The data covers 19,000 traces from 95 monitored sites and 10,000 traces from unmonitored sites.<br/>
-  Machine Learning course team project · **My part: data preprocessing, feature extraction, feature validation experiments**
-  - Adding direction patterns from early page loading raised RF accuracy **87.9% → 95.5%** (5-fold CV on train, default hyperparameters, before test evaluation)
-  - Traced an inflated open-world score (ROC-AUC 1.0000) to differences in how the two datasets were collected, removed that segment, and recomputed the features
+  Recommends Hugging Face models that fit a user's license, hardware, and language needs.<br/>
+  Team lead of 4 · **Evaluation design, retrieval experiments**
+  - 1,170 candidates judged by hand · 2 retriever defects found
 
 - 🖼️ **[Visual Token Compression](https://github.com/yeju321qaz/artificial-intelligence-course-project)** `2026 Spring`<br/>
-  LLaVA-Phi-3-Mini turns each image into 576 tokens. I tested whether keeping only the important ones, without any extra training, still preserves the answer. Tokens are scored by feature norm and similarity to the CLS token, and the selection also keeps them spread across the whole image.<br/>
-  AI course, individual project
-  - Visual tokens **576 → 64** (88.9% fewer)
-  - VQA accuracy **80.0%** (30 labeled multiple-choice questions)
+  Training-free visual token selection for LLaVA-Phi-3-Mini.<br/>
+  Individual · AI course
+  - Visual tokens **576 → 64** with 80.0% VQA accuracy (30 questions)
 
-- 🔧 **[Jetson · CUDA labs](https://github.com/yeju321qaz/embedded-systems-jetson)** `2024.11 – 12`<br/>
-  On an NVIDIA Jetson, controlled GPIO registers directly by mmap-ing `/dev/mem`, and displayed images processed by a CUDA kernel on an LCD.<br/>
-  Embedded Systems course · individual · assignments built on course-provided code
+- 🔧 **[Jetson · CUDA Labs](https://github.com/yeju321qaz/embedded-systems-jetson)** `2024.11 – 12`<br/>
+  GPIO register control and CUDA image processing on NVIDIA Jetson.<br/>
+  Individual · Embedded Systems course
 
 ---
 
