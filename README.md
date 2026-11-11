@@ -1,10 +1,10 @@
 # Hi, I'm Yejoo 🌱
 
-### AI Engineer · RAG · Multimodal · LLM Evaluation
+### AI & Data Engineer · RAG · Multimodal · Data Pipelines
 
-> **New-grad AI engineer building RAG, multimodal, and agent features for real services.**
+> **New-grad engineer building RAG, multimodal, and agent features — and the data pipelines behind them.**
 
-RAG · Multimodal · Agent를 실제 서비스에 붙이고, 그 결과를 제대로 평가하는 일에 관심이 있습니다.
+데이터를 모으고 정제하는 단계부터 RAG · Multimodal · Agent를 서비스에 붙이고 결과를 평가하는 단계까지, 전 과정을 믿을 수 있게 만드는 일에 관심이 있습니다.
 
 [![Email](https://img.shields.io/badge/yeju321qaz@gmail.com-333333?style=flat-square&logo=gmail&logoColor=white)](mailto:yeju321qaz@gmail.com)
 
@@ -14,13 +14,14 @@ RAG · Multimodal · Agent를 실제 서비스에 붙이고, 그 결과를 제�
 
 - 🏦 **[Yesom24](https://github.com/likelion-8/kdic-rag-chatbot)** `2026.07 – 09`<br/>
   RAG chatbot for the Korea Deposit Insurance Corporation that answers only from official sources.<br/>
-  Team lead of 5 · **RAG pipeline, evaluation, admin backend**
+  Team lead of 5 · **Crawling & indexing pipeline, RAG, evaluation, admin backend**
   - Recall@5 **0.956** (89 held-out questions) · strict accuracy **83.5%** (79 questions, human-reviewed)
   - LLM cost **₩2.24 per question** (138 web queries)
 
 - 👟 **[Autique](https://github.com/hamyeon/be-ai)** `2026.03 – `<br/>
   Used-sneaker auction platform with photo-based listing, AI pricing, and a purchase agent that bids for the buyer.<br/>
-  Team of 3 · **Vision analysis, pricing, purchase agent AI components**
+  Team of 3 · **Data collection & cleaning, Vision analysis, pricing, purchase agent AI components**
+  - Price tables built from **46,998** collected listings cleaned to **6,173** in 5 steps
   - Vision analysis **14.9s → 4.7s**, cost **-64%** (14 listings)
   - Listing match accuracy **92% → 97%**, 0 wrong matches accepted (59 real listings)
 
@@ -46,6 +47,11 @@ RAG · Multimodal · Agent를 실제 서비스에 붙이고, 그 결과를 제�
 ---
 
 ## Highlights
+
+**Building and checking data pipelines**
+- Collected 46,998 used-sneaker listings from two marketplaces, following robots.txt with request delays, and cleaned them in 5 steps — model mapping, filtering out kids', collaboration, and bundle listings, price range, and a minimum sample size per model — down to 6,173 records for 65 models. · [Crawler & calibration](https://github.com/hamyeon/be-ai/tree/main/crawler)
+- Built the crawler for official deposit-insurance guidance pages, including a 289-row dynamic table, and the index side of the admin console: index versions, automatic cache invalidation, and content-hash change detection so updated pages are re-indexed without stale answers.
+- Wrote the Tor project's shared data loader and checked all 29,000 traces against the reference notebook (0 mismatches), then ran quality checks that found traces cut off near 10,000 cells and a final visit that was slower than the rest. · [Data notes](https://github.com/kiak-team/ML/blob/main/docs/DATA.md)
 
 **Finding and fixing evaluation errors**
 - Intent classification scored 100%, which made me suspicious. The test questions had been generated from the same pages used for training. A leave-page-out evaluation, which removes every question from the same page, showed the real accuracy was **81.5%**. · [Classifier comparison](https://github.com/likelion-8/kdic-rag-chatbot/blob/main/docs/intent_classifier_comparison.md)
@@ -85,15 +91,22 @@ RAG · Multimodal · Agent를 실제 서비스에 붙이고, 그 결과를 제�
 ![BGE-M3](https://img.shields.io/badge/BGE--M3-555555?style=flat-square)
 ![Langfuse](https://img.shields.io/badge/Langfuse-0A0A0A?style=flat-square)
 
-**Backend · Data**
+**Data**
+
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL%20%2F%20pgvector-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis_Streams-DC382D?style=flat-square&logo=redis&logoColor=white)
+![pandas](https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
+![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-555555?style=flat-square)
+
+**Backend · Infra**
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-007396?style=flat-square&logo=openjdk&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL%20%2F%20pgvector-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis_Streams-DC382D?style=flat-square&logo=redis&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS_(RDS%2C_S3)-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
