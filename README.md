@@ -30,10 +30,10 @@
   ML course team project · **Data preprocessing, feature extraction**
   - Random Forest accuracy **87.9% → 95.5%** with early page-load features (5-fold CV)
 
-- 🔎 **Model Scout** 🔒 `2026.09 – `<br/>
-  Recommends Hugging Face models that fit a user's license, hardware, and language needs.<br/>
-  Team lead of 4 · **Evaluation design, retrieval experiments**
-  - 1,170 candidates judged by hand · 2 retriever defects found
+- 🔎 **[Model Scout](https://github.com/Model-Scout/Model_Scout)** `2026.09 – `<br/>
+  Turns a service idea into Korean-capable Hugging Face models and public datasets to use, with evidence — and says "unknown" instead of guessing.<br/>
+  Team lead of 4 · **Evaluation design, intent routing & clarification (LangGraph), backend API**
+  - 1,170 candidates judged by hand · 2 retriever defects found from the BM25 baseline
 
 - 🖼️ **[Visual Token Compression](https://github.com/yeju321qaz/artificial-intelligence-course-project)** `2026 Spring`<br/>
   Training-free visual token selection for LLaVA-Phi-3-Mini.<br/>
